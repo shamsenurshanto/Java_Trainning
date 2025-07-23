@@ -1,0 +1,28 @@
+Threads:
+In most modern programming,
+parallel execution is achieved using threads.
+A thread is the smallest sequence of programmed instructions that can be
+managed independently by a scheduler (typically part of the operating system).
+
+Challenges of Parallel Programming:
+
+Synchronization and Data Races:
+
+If multiple threads try to access and modify the same shared data at the same time, you can get unpredictable results (a "data race").
+
+You need synchronization mechanisms (like locks, mutexes, semaphores) to ensure that only one thread modifies a critical piece of data at a time. This adds complexity.
+
+Deadlock:
+
+Imagine Thread A needs Resource 1 and Resource 2. Thread B needs Resource 2 and Resource 1.
+
+If Thread A gets Resource 1 and Thread B gets Resource 2, they can both get stuck waiting for the other's resource. This is a deadlock.
+
+Load Balancing:
+
+Ensuring that all processors/threads have roughly an equal amount of work to do. If one thread finishes early, and others are still working, you're not maximizing your parallelism.
+
+Complexity:
+
+Designing, implementing, debugging, and testing parallel programs is significantly more complex than sequential ones. It's harder to reason about the exact state of the program at any given moment.
+

@@ -32,7 +32,7 @@ public class Main {
 
         List<String> products = List.of("Laptop", "Mouse", "Keyboard", "Monitor", "Webcam");
 
-        System.out.println("--- Processing products with Stream.forEach() ---");
+        System.out.println("--- Processing products with forEach() ---");
         products.forEach(product -> {
             if(product.length() > 6) {
                 System.out.println(product);
