@@ -1,3 +1,4 @@
+import java.lang.Runnable;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -39,6 +40,60 @@ public class Main {
             }
 
         });
+
+
+
+
+
+
+        System.out.println("Main Thread: Starting...");
+
+        Runnable task1 = () -> {
+            for (int i = 0; i < 3; i++) {
+                System.out.println("Worker Thread 1: Count " + i);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    System.out.println("Worker Thread 1 was interrupted.");
+                    return;
+                }
+            }
+            System.out.println("Worker Thread 1: Finished.");
+        };
+
+        Thread thread1 = new Thread((Runnable) task1);
+        thread1.start();
+
+        Thread thread2 = new Thread(() -> {
+            for (int i = 0; i < 3; i++) {
+                System.out.println("Worker Thread 2: Hello " + i);
+                try {
+                    Thread.sleep(150);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    System.out.println("Worker Thread 2 was interrupted.");
+                    return;
+                }
+            }
+            System.out.println("Worker Thread 2: Finished.");
+        });
+        thread2.start();
+
+        System.out.println("Main Thread: All worker threads launched. Doing other stuff...");
+
+
+
+        System.out.println("Main Thread: Exiting.");
+
+
+
+
+
+
+
+
+
 
 
 
