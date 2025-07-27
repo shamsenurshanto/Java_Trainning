@@ -1,12 +1,9 @@
 import java.lang.Runnable;
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
 
         myClass myClass1 = new myClass();
         myClass myClass2 = new myClass();
@@ -25,7 +22,7 @@ public class Main {
         p1.print();
 
     /// Loop using Lamda Expression
-        List<Integer> numbers = List.of(1, 2, 3, 4, 5); // Java 9+ List.of() for immutable list
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5);
         numbers.forEach(num -> {
             int doubled = num * 2;
             System.out.println(num + " doubled is " + doubled);
